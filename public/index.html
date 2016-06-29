@@ -84,10 +84,13 @@
 			</g>
 		</svg>
 
+		<script src="/socket.io/socket.io.js"></script>
 		<script>
 			const assignedId = 55;
 			const ledElements = document.querySelectorAll('.led');
 			const assignedElement = document.querySelector('#led' + assignedId);
+
+			var socket = io();
 
 			assignedElement.classList.add('led-assigned');
 		</script>
