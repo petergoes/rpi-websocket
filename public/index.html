@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Raspberry Pi Websocket experiment</title>
-
+		<meta name="viewport" content="width=device-width, initial-scale=1" >
 		<style>
 			.led { opacity: 0.25; }
 			.led-assigned { fill: #ff0000; }
@@ -125,7 +125,9 @@
 
 			function assignId(id) {
 				assignedId = id;
-				assignedElement = document.querySelector('#led' + assignedId);
+				assignedIdStr = (id < 10) ? `0${id}` : `${id}` ;
+				console.log(assignedIdStr);
+				assignedElement = document.querySelector('#led' + assignedIdStr);
 				assignedElement.classList.add('led-assigned');
 			}
 
