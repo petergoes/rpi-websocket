@@ -9,4 +9,10 @@ app.use(express.static('public'));
 
 io.on('connection', (socket) => {
 	console.log('on connection');
+
+	socket.on('led-request', (clientId) => {
+		console.log('clientId:', clientId);
+
+		socket.emit('led-assignment', {clientId: clientId, ledId: 40});
+	});
 });

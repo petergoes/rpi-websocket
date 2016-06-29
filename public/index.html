@@ -86,13 +86,32 @@
 
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
-			const assignedId = 55;
 			const ledElements = document.querySelectorAll('.led');
-			const assignedElement = document.querySelector('#led' + assignedId);
+			const myClientId = `${Date.now()}-${Math.random() * 1000}`;
+			const socket = io();
+			let assignedId = null;
+			let assignedElement = null;
 
-			var socket = io();
+			socket.on('connect', onConnect);
+			socket.on('led-assignment', (data) => {
+				if (data.clientId === myClientId) {
+					assignId(data.ledId);
+				}
+			});
 
-			assignedElement.classList.add('led-assigned');
+			function onConnect() {
+				sendLedRequest();
+			}
+
+			function sendLedRequest() {
+				socket.emit('led-request', myClientId);
+			}
+
+			function assignId(id) {
+				assignedId = id;
+				assignedElement = document.querySelector('#led' + assignedId);
+				assignedElement.classList.add('led-assigned');
+			}
 		</script>
 	</body>
 </html>
