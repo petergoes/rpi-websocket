@@ -29,4 +29,9 @@ io.on('connection', (socket) => {
 
 		socket.emit('led-assignment', assignedLeds[ledId]);
 	});
+
+	socket.on('toggle-led', (id) => {
+		assignedLeds[id].active = !assignedLeds[id].active;
+		socket.emit('led-status', assignedLeds[id]);
+	});
 });
