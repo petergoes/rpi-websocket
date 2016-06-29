@@ -94,6 +94,7 @@
 
 			socket.on('connect', onConnect);
 			socket.on('led-assignment', (data) => {
+				console.log('data:', data);
 				if (data.clientId === myClientId) {
 					assignId(data.ledId);
 				}
