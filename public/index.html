@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Raspberry Pi Websocket experiment</title>
+
+		<style>
+			.led { opacity: 0.25; }
+			.led-assigned { fill: #ff0000; }
+			.led-active { opacity: 1; }
+		</style>
+	</head>
+	<body>
+		<h1>Raspberry Pi Websocket experiment</h1>
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px"
+		 height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+			<g id="Layer_2">
+				<rect x="5.5" y="5.5" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="290" height="290"/>
+			</g>
+			<g id="Layer_1">
+				<circle id="led01" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="23.5" cy="23.5" r="12"/>
+				<circle id="led02" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="59.5" cy="23.5" r="12"/>
+				<circle id="led03" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="96.071" cy="23.5" r="12"/>
+				<circle id="led04" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="132.357" cy="23.5" r="12"/>
+				<circle id="led05" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="168.5" cy="23.5" r="12"/>
+				<circle id="led06" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="204.5" cy="23.5" r="12"/>
+				<circle id="led07" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="241.214" cy="23.5" r="12"/>
+				<circle id="led08" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="277.5" cy="23.5" r="12"/>
+				<circle id="led09" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="23.5" cy="59.5" r="12"/>
+				<circle id="led10" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="59.5" cy="59.5" r="12"/>
+				<circle id="led11" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="96.071" cy="59.5" r="12"/>
+				<circle id="led12" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="132.357" cy="59.5" r="12"/>
+				<circle id="led13" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="168.5" cy="59.5" r="12"/>
+				<circle id="led14" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="204.5" cy="59.5" r="12"/>
+				<circle id="led15" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="241.214" cy="59.5" r="12"/>
+				<circle id="led16" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="277.5" cy="59.5" r="12"/>
+				<circle id="led17" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="23.5" cy="96.071" r="12"/>
+				<circle id="led18" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="59.786" cy="96.071" r="12"/>
+				<circle id="led19" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="96.5" cy="96.071" r="12"/>
+				<circle id="led20" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="132.5" cy="96.071" r="12"/>
+				<circle id="led21" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="168.643" cy="96.071" r="12"/>
+				<circle id="led22" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="204.929" cy="96.071" r="12"/>
+				<circle id="led23" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="241.5" cy="96.071" r="12"/>
+				<circle id="led24" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="277.5" cy="96.071" r="12"/>
+				<circle id="led25" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="23.5" cy="132.357" r="12"/>
+				<circle id="led26" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="59.786" cy="132.357" r="12"/>
+				<circle id="led27" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="96.5" cy="132.357" r="12"/>
+				<circle id="led28" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="132.5" cy="132.357" r="12"/>
+				<circle id="led29" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="168.643" cy="132.357" r="12"/>
+				<circle id="led30" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="204.929" cy="132.357" r="12"/>
+				<circle id="led31" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="241.5" cy="132.357" r="12"/>
+				<circle id="led32" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="277.5" cy="132.357" r="12"/>
+				<circle id="led33" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="23.5" cy="168.643" r="12"/>
+				<circle id="led34" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="59.5" cy="168.643" r="12"/>
+				<circle id="led35" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="96.071" cy="168.643" r="12"/>
+				<circle id="led36" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="132.357" cy="168.643" r="12"/>
+				<circle id="led37" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="168.5" cy="168.643" r="12"/>
+				<circle id="led38" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="204.5" cy="168.643" r="12"/>
+				<circle id="led39" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="241.214" cy="168.643" r="12"/>
+				<circle id="led40" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="277.5" cy="168.643" r="12"/>
+				<circle id="led41" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="23.5" cy="204.929" r="12"/>
+				<circle id="led42" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="59.5" cy="204.929" r="12"/>
+				<circle id="led43" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="96.071" cy="204.929" r="12"/>
+				<circle id="led44" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="132.357" cy="204.929" r="12"/>
+				<circle id="led45" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="168.5" cy="204.929" r="12"/>
+				<circle id="led46" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="204.5" cy="204.929" r="12"/>
+				<circle id="led47" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="241.214" cy="204.929" r="12"/>
+				<circle id="led48" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="277.5" cy="204.929" r="12"/>
+				<circle id="led49" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="23.5" cy="241.214" r="12"/>
+				<circle id="led50" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="59.786" cy="241.214" r="12"/>
+				<circle id="led51" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="96.5" cy="241.214" r="12"/>
+				<circle id="led52" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="132.5" cy="241.214" r="12"/>
+				<circle id="led53" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="168.643" cy="241.214" r="12"/>
+				<circle id="led54" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="204.929" cy="241.214" r="12"/>
+				<circle id="led55" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="241.5" cy="241.214" r="12"/>
+				<circle id="led56" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="277.5" cy="241.214" r="12"/>
+				<circle id="led57" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="23.5" cy="277.5" r="12"/>
+				<circle id="led58" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="59.786" cy="277.5" r="12"/>
+				<circle id="led59" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="96.5" cy="277.5" r="12"/>
+				<circle id="led60" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="132.5" cy="277.5" r="12"/>
+				<circle id="led61" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="168.643" cy="277.5" r="12"/>
+				<circle id="led62" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="204.929" cy="277.5" r="12"/>
+				<circle id="led63" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="241.5" cy="277.5" r="12"/>
+				<circle id="led64" class="led" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-miterlimit="10" cx="277.5" cy="277.5" r="12"/>
+			</g>
+		</svg>
+
+		<script>
+			const assignedId = 55;
+			const ledElements = document.querySelectorAll('.led');
+			const assignedElement = document.querySelector('#led' + assignedId);
+
+			assignedElement.classList.add('led-assigned');
+		</script>
+	</body>
+</html>
